@@ -30,6 +30,7 @@ img {
     border-bottom: 2px solid #c2c1c1;
     position: sticky;
     animation: headerAni 1s ease-out;
+    z-index: 1;
     top: 0;  
 }
 
@@ -154,7 +155,7 @@ hr {
     margin: 40px auto 60px auto;
     max-width: 1200px;
     padding: 0 20px;
-    z-index: 1;
+    
 }
 
 .card {
@@ -169,7 +170,7 @@ hr {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #e0e0e0;
     animation: cardAni 1s ease-in-out;
-    z-index: 1;
+   
 }
 
 
