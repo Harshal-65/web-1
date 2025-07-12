@@ -1,0 +1,9 @@
+.exam-section {
+    max-width: 900px;
+    margin: 40px auto 20px auto;
+    background: radial-gradient(circle, #a1c4fd, #667eea);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    padding: 32px 24px;
+    font-family: 'Arial', sans-serif;
+}

@@ -1,0 +1,114 @@
+.login-container {
+    max-width: 400px;
+    margin: 60px auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    padding: 32px 24px;
+    text-align: center;
+    backdrop-filter: blur(50px);
+    animation: loginAni 1s ease-in-out;
+}
+
+@keyframes loginAni { 
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.login-container h2 {
+    color: #23408e;
+    margin-bottom: 24px;
+}
+
+.login-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.login-tab {
+    flex: 1;
+    padding: 10px 0;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #23408e;
+    border: none;
+    border-radius: 8px 8px 8px 8px;
+    font-weight: bold;
+    transition: background 0.2s;
+    backdrop-filter: blur(20px);
+    margin: 0 5px;
+}
+
+.login-tab.active {
+    background: #667eea;
+    color: #fff;
+}
+
+.login-form {
+    display: none;
+}
+
+.login-form.active {
+    display: block;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0 18px 0;
+    border: 1.5px solid #a1c4fd;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.login-form label {
+    display: block;
+    text-align: left;
+    margin-left: 5%;
+    color: #23408e;
+    font-weight: 500;
+}
+
+.login-form .button {
+    width: 300px;
+    margin-top: 10px;
+    border: none;
+    background: none;
+    color: #23408e;
+    padding: 20px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    backdrop-filter: blur();
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    border-radius: 5px;
+    font-weight: bold;
+    border: 3px solid #d7dff3;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+.login-form .button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #d2dbf1;
+    transform: scale(1.05) translateY(-6px);
+    border-radius: 10px;
+    backdrop-filter: blur(30px);
+    width: 320px;
+}
+
+.login-error {
+    color: #d32f2f;
+    margin-bottom: 10px;
+    font-size: 0.98rem;
+}

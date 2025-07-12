@@ -1,0 +1,81 @@
+.profile-section {
+    max-width: 500px;
+    margin: 40px auto 20px auto;
+    background: #eaf4ff;
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    padding: 32px 24px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    background: radial-gradient(circle, #a1c4fd, #667eea);
+    border: 3px solid #051f3c;
+    animation: porofileAni 1s ease-in-out;
+}
+
+@keyframes porofileAni {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.profile-section h2 {
+    margin-bottom: 24px;
+    color: #23408e;
+    font-size: 40px;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 18px;
+    border: 3px solid #a1c4fd;
+}
+
+.profile-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.profile-details li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #041d5e;
+}
+
+.button {
+    background: radial-gradient(circle, #a1c4fd, #667eea);
+    border: none;
+    color: #23408e;
+    padding: 12px 28px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    border: 3px solid #4a90e2;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.button:hover {
+    background: radial-gradient(circle, #667eea, #a1c4fd);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    text-decoration: underline;
+}

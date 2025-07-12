@@ -1,0 +1,89 @@
+.attendance-section {
+            max-width: 800px;
+            margin: 40px auto 20px auto;
+            background: #eaf4ff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            padding: 32px 24px;
+            font-family: 'Arial', sans-serif;
+            background: radial-gradient(circle, #a1c4fd, #667eea);
+        }
+        .attendance-section h2 {
+            margin-bottom: 24px;
+            color: #23408e;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        .attendance-summary {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        .attendance-summary div {
+            background: #fff;
+            border-radius: 8px;
+            padding: 18px 28px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            margin: 10px;
+            min-width: 140px;
+            text-align: center;
+        }
+
+        .attendance-summary div div{
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #23408e;
+            background: radial-gradient(circle, #a1c4fd, #667eea);
+            border:3px solid #4a90e2;
+            
+        }
+        .attendance-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 24px;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .attendance-table th, .attendance-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #b3c6e7;
+            text-align: center;
+        }
+        .attendance-table th {
+            background: #a1c4fd;
+            color: #23408e;
+        }
+        .attendance-table tr:last-child td {
+            border-bottom: none;
+        }
+        .filter-row {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+        .filter-row select {
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid #a1c4fd;
+            font-size: 1rem;
+        }
+        .button {
+            background: radial-gradient(circle, #a1c4fd, #667eea);
+            border: none;
+            color: #23408e;
+            padding: 12px 28px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1rem;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+        .button:hover {
+            background: radial-gradient(circle, #667eea, #a1c4fd);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            text-decoration: underline;
+        }

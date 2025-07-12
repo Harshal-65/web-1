@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Student Portel</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="header_row">
+        <img src="https://imgs.search.brave.com/7fk_lVvzbbp6L7HmNLS-vzXigKtw5j5cAhi52ow1BiU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jb2xs/ZWdlczE4LnMzLmFw/LXNvdXRoLTEuYW1h/em9uYXdzLmNvbS9D/aGFyb3Rhcl9Vbml2/ZXJzaXR5X29mX1Nj/aWVuY2VfYW5kX1Rl/Y2hub2xvZ3lfQ0hB/UlVTQVRfQW5hbmRf/bG9nb19qcGdfZWI0/NWFjNmNjNS53ZWJw" class="logo" alt="Logo">
+        <p class="title">Student Portel - Admin</p>
+    </div>
+    <main>
+        <section class="admin-section">
+            <h2>Admin Dashboard</h2>
+            <div class="admin-cards">
+                <div class="admin-card">
+                    <h3>Quick Actions</h3>
+                    <ul>
+                        <li>Add/Remove Student</li>
+                        <li>Update Attendance</li>
+                        <li>Post Announcements</li>
+                        <li>Manage Results</li>
+                    </ul>
+                </div>
+                <div class="admin-card">
+                    <h3>Recent Activities</h3>
+                    <ul>
+                        <li>Added new student: Priya Sharma</li>
+                        <li>Updated attendance for July</li>
+                        <li>Posted "Exam Schedule"</li>
+                    </ul>
+                </div>
+                <div class="admin-card">
+                    <h3>Statistics</h3>
+                    <ul>
+                        <li>Total Students: 120</li>
+                        <li>Average Attendance: 89%</li>
+                        <li>Pending Results: 5</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Add Student Form -->
+            <form class="admin-form" id="addStudentForm" onsubmit="addStudent(event)">
+                <h3>Add Student</h3>
+                <label for="studentName">Name</label>
+                <input type="text" id="studentName" required>
+                <label for="studentRoll">Roll No</label>
+                <input type="text" id="studentRoll" required>
+                <label for="studentEmail">Email</label>
+                <input type="email" id="studentEmail" required>
+                <label for="studentCourse">Course</label>
+                <input type="text" id="studentCourse" required>
+                <button type="submit" class="button">Add Student</button>
+                <div id="addStudentMsg" style="color:#23408e;margin-top:8px;"></div>
+            </form>
+            <!-- Student List Table -->
+            <h3 style="color:#23408e;">Student List</h3>
+            <table class="admin-table" id="studentTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll No</th>
+                        <th>Email</th>
+                        <th>Course</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>123456</td>
+                        <td>johndoe@email.com</td>
+                        <td>B.Sc Computer Science</td>
+                        <td><button onclick="removeRow(this)" class="button" style="background:#d32f2f;color:#fff;">Remove</button></td>
+                    </tr>
+                    <tr>
+                        <td>Priya Sharma</td>
+                        <td>123457</td>
+                        <td>priya@email.com</td>
+                        <td>B.Sc Mathematics</td>
+                        <td><button onclick="removeRow(this)" class="button" style="background:#d32f2f;color:#fff;">Remove</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- Announcements -->
+            <form class="admin-form" id="announcementForm" onsubmit="postAnnouncement(event)">
+                <h3>Post Announcement</h3>
+                <label for="announcementText">Announcement</label>
+                <input type="text" id="announcementText" required>
+                <button type="submit" class="button">Post</button>
+                <div id="announcementMsg" style="color:#23408e;margin-top:8px;"></div>
+            </form>
+            <!-- Add Exam Form (for admin only) -->
+            <form class="admin-form" id="addExamForm" onsubmit="addExam(event)">
+                <h3>Add Exam</h3>
+                <label for="examSubject">Subject</label>
+                <input type="text" id="examSubject" required>
+                <label for="examDate">Date</label>
+                <input type="date" id="examDate" required>
+                <label for="examTime">Time</label>
+                <input type="time" id="examTime" required>
+                <label type="number" for="examRoom" >Room</label>
+                <input type="text" id="examRoom" required>
+                <button type="submit" class="button">Add Exam</button>
+                <div id="addExamMsg" style="color:#23408e;margin-top:8px;"></div>
+            </form>
+            <!-- Exams Table (admin can see and manage) -->
+            <h3 style="color:#23408e;">Upcoming Exams</h3>
+            <table class="admin-table" id="adminExamTable">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Room</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mathematics</td>
+                        <td>2025-07-10</td>
+                        <td>10:00 AM</td>
+                        <td>101</td>
+                        <td>Scheduled</td>
+                    </tr>
+                    <!-- More rows as needed -->
+                </tbody>
+            </table>
+            <!-- Logout Button -->
+            <div style="text-align:center;">
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p class="footer_text">© 2025 Student Portel. All rights reserved.</p>
+        <p class="footer_links">
+            <a href="mailto:support@studentportel.com">Contact Support</a> |
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a>
+        </p>
+    </footer>
+    <script>
+        // Add Student Functionality
+        function addStudent(event) {
+            event.preventDefault();
+            const name = document.getElementById('studentName').value.trim();
+            const roll = document.getElementById('studentRoll').value.trim();
+            const email = document.getElementById('studentEmail').value.trim();
+            const course = document.getElementById('studentCourse').value.trim();
+            if(name && roll && email && course) {
+                const table = document.getElementById('studentTable').getElementsByTagName('tbody')[0];
+                const row = table.insertRow();
+                row.innerHTML = `
+                    <td>${name}</td>
+                    <td>${roll}</td>
+                    <td>${email}</td>
+                    <td>${course}</td>
+                    <td><button onclick="removeRow(this)" class="button" style="background:#d32f2f;color:#fff;">Remove</button></td>
+                `;
+                document.getElementById('addStudentMsg').textContent = "Student added successfully!";
+                document.getElementById('addStudentForm').reset();
+                setTimeout(()=>{document.getElementById('addStudentMsg').textContent="";}, 2000);
+            }
+        }
+        // Remove Student Row
+        function removeRow(btn) {
+            btn.closest('tr').remove();
+        }
+        // Post Announcement
+        function postAnnouncement(event) {
+            event.preventDefault();
+            const text = document.getElementById('announcementText').value.trim();
+            if(text) {
+                document.getElementById('announcementMsg').textContent = "Announcement posted!";
+                document.getElementById('announcementForm').reset();
+                setTimeout(()=>{document.getElementById('announcementMsg').textContent="";}, 2000);
+            }
+        }
+        // Add Exam Functionality
+        function addExam(event) {
+            event.preventDefault();
+            const subject = document.getElementById('examSubject').value.trim();
+            const date = document.getElementById('examDate').value;
+            const time = document.getElementById('examTime').value;
+            const room = document.getElementById('examRoom').value.trim();
+            if(subject && date && time && room) {
+                const table = document.getElementById('adminExamTable').getElementsByTagName('tbody')[0];
+                const row = table.insertRow();
+                row.innerHTML = `
+                    <td>${subject}</td>
+                    <td>${date}</td>
+                    <td>${time}</td>
+                    <td>${room}</td>
+                    <td>Scheduled</td>
+                `;
+                document.getElementById('addExamMsg').textContent = "Exam added!";
+                document.getElementById('addExamForm').reset();
+                setTimeout(()=>{document.getElementById('addExamMsg').textContent="";}, 2000);
+            }
+        }
+        // Logout
+        function logout() {
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - Exam</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="Exam.css">
+    <script src="Exam.js"></script>
+    <style>
+        .exam-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .exam-table th, .exam-table td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+        .exam-table th { background: #f0f0f0; }
+        .admin-only { margin: 10px 5px; }
+        .hidden { display: none; }
+        .form-row { margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="header_row">
+        <img src="https://imgs.search.brave.com/7fk_lVvzbbp6L7HmNLS-vzXigKtw5j5cAhi52ow1BiU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jb2xs/ZWdlczE4LnMzLmFw/LXNvdXRoLTEuYW1h/em9uYXdzLmNvbS9D/aGFyb3Rhcl9Vbml2/ZXJzaXR5X29mX1Nj/aWVuY2VfYW5kX1Rl/Y2hub2xvZ3lfQ0hB/UlVTQVRfQW5hbmRf/bG9nb19qcGdfZWI0/NWFjNmNjNS53ZWJw" class="logo" alt="Logo">
+        <p class="title">Student Portal - Exam</p>
+        <button class="buttonOut" onclick="gotohome()">Go To Home</button>
+    </div>
+    <hr>
+    <!-- Admin Only: Add Exam Button -->
+    <button class="button admin-only" onclick="showExamForm()">Add Exam</button>
+    <!-- Exam Add/Edit Form -->
+    <div id="examFormDiv" class="hidden">
+        <form id="examForm" onsubmit="return saveExam(event)">
+            <div class="form-row">
+                <label>Subject:</label>
+                <input type="text" id="subject" required>
+            </div>
+            <div class="form-row">
+                <label>Date:</label>
+                <input type="date" id="date" required>
+            </div>
+            <div class="form-row">
+                <label>Time:</label>
+                <input type="time" id="time" required>
+            </div>
+            <div class="form-row">
+                <label>Location:</label>
+                <input type="text" id="location" required>
+            </div>
+            <div class="form-row">
+                <label>Semester:</label>
+                <input type="text" id="semester" required>
+            </div>
+            <input type="hidden" id="editIndex">
+            <button type="submit" class="button admin-only">Save</button>
+            <button type="button" class="button admin-only" onclick="hideExamForm()">Cancel</button>
+        </form>
+    </div>
+    <!-- Exam Table -->
+    <table class="exam-table" id="examTable">
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Location</th>
+                <th>Semester</th>
+                <th class="admin-only">Edit</th>
+                <th class="admin-only">Delete</th>
+            </tr>
+        </thead>
+        <tbody id="examTableBody">
+            <!-- Exam rows will be added by JS -->
+        </tbody>
+    </table>
+    <footer>
+        <p class="footer_text">© 2025 Student Portel. All rights reserved.</p>
+        <p class="footer_links">
+            <a href="mailto:support@studentportel.com">Contact Support</a> |
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a>
+        </p>
+    </footer>
+    <script>
+    function gotohome() {
+      window.location.href = "index.html";
+    }
+  </script>
+   
+</body>
+</html>

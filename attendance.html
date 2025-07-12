@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance - Student Portel</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="attendance.css">
+</head>
+<body>
+    <div class="header_row">
+        <img src="https://imgs.search.brave.com/7fk_lVvzbbp6L7HmNLS-vzXigKtw5j5cAhi52ow1BiU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jb2xs/ZWdlczE4LnMzLmFw/LXNvdXRoLTEuYW1h/em9uYXdzLmNvbS9D/aGFyb3Rhcl9Vbml2/ZXJzaXR5X29mX1Nj/aWVuY2VfYW5kX1Rl/Y2hub2xvZ3lfQ0hB/UlVTQVRfQW5hbmRf/bG9nb19qcGdfZWI0/NWFjNmNjNS53ZWJw" class="logo" alt="Logo">
+        <p class="title">Student Portel</p>
+        <button class="buttonOut" onclick="location.href='index.html'">Go To Home</button>
+    </div>
+    <main>
+        <section class="attendance-section">
+            <h2>Attendance</h2>
+            <div class="attendance-summary">
+                <div>
+                    <strong>Total Days</strong>
+                    <div>180</div>
+                </div>
+                <div>
+                    <strong>Present</strong>
+                    <div>165</div>
+                </div>
+                <div>
+                    <strong>Absent</strong>
+                    <div>15</div>
+                </div>
+                <div>
+                    <strong>Attendance %</strong>
+                    <div>91.7%</div>
+                </div>
+            </div>
+            <div class="filter-row">
+                <label for="month">Filter by Month: </label>
+                <select id="month" onchange="filterAttendance()">
+                    <option value="all">All</option>
+                    <option value="july">July</option>
+                    <option value="august">August</option>
+                    <option value="september">September</option>
+                </select>
+            </div>
+            <table class="attendance-table" id="attendanceTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Remarks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-month="july">
+                        <td>2025-07-01</td>
+                        <td style="color:green;">Present</td>
+                        <td>-</td>
+                    </tr>
+                    <tr data-month="july">
+                        <td>2025-07-02</td>
+                        <td style="color:red;">Absent</td>
+                        <td>Sick Leave</td>
+                    </tr>
+                    <tr data-month="august">
+                        <td>2025-08-03</td>
+                        <td style="color:green;">Present</td>
+                        <td>-</td>
+                    </tr>
+                    <tr data-month="august">
+                        <td>2025-08-04</td>
+                        <td style="color:green;">Present</td>
+                        <td>-</td>
+                    </tr>
+                    <tr data-month="september">
+                        <td>2025-09-01</td>
+                        <td style="color:green;">Present</td>
+                        <td>-</td>
+                    </tr>
+                    <tr data-month="september">
+                        <td>2025-09-02</td>
+                        <td style="color:red;">Absent</td>
+                        <td>Personal</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p class="footer_text">© 2025 Student Portel. All rights reserved.</p>
+        <p class="footer_links">
+            <a href="mailto:support@studentportel.com">Contact Support</a> |
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a>
+        </p>
+    </footer>
+    <script>
+        function filterAttendance() {
+            const month = document.getElementById('month').value;
+            const rows = document.querySelectorAll('#attendanceTable tbody tr');
+            rows.forEach(row => {
+                if (month === 'all' || row.getAttribute('data-month') === month) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>

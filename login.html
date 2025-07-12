@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Student Portel</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="login.css">
+    <script src="login.js"></script>
+    
+</head>
+<body>
+    <div class="header_row">
+        <img src="https://imgs.search.brave.com/7fk_lVvzbbp6L7HmNLS-vzXigKtw5j5cAhi52ow1BiU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jb2xs/ZWdlczE4LnMzLmFw/LXNvdXRoLTEuYW1h/em9uYXdzLmNvbS9D/aGFyb3Rhcl9Vbml2/ZXJzaXR5X29mX1Nj/aWVuY2VfYW5kX1Rl/Y2hub2xvZ3lfQ0hB/UlVTQVRfQW5hbmRf/bG9nb19qcGdfZWI0/NWFjNmNjNS53ZWJw" class="logo" alt="Logo">
+        <p class="title">Student Portel</p>
+    </div>
+    <div class="login-container">
+        <h2>Login</h2>
+        <div class="login-tabs">
+            <button class="login-tab active" id="studentTab" onclick="showForm('student')">Login as Student</button>
+            <button class="login-tab" id="adminTab" onclick="showForm('admin')">Login as Admin</button>
+        </div>
+        <form id="studentForm" class="login-form active" onsubmit="return loginStudent(event)">
+            <div class="login-error" id="studentError"></div>
+            <label for="student-username">Student ID or Email</label>
+            <input type="text" id="student-username" required>
+            <label for="student-password">Password</label>
+            <input type="password" id="student-password" required>
+            <button type="submit" class="button">Login as Student</button>
+        </form>
+        <form id="adminForm" class="login-form" onsubmit="return loginAdmin(event)">
+            <div class="login-error" id="adminError"></div>
+            <label for="admin-username">Admin Username</label>
+            <input type="text" id="admin-username" required>
+            <label for="admin-password">Password</label>
+            <input type="password" id="admin-password" required>
+            <button type="submit" class="button">Login as Admin</button>
+        </form>
+    </div>
+    <footer>
+        <p class="footer_text">© 2025 Student Portel. All rights reserved.</p>
+        <p class="footer_links">
+            <a href="mailto:support@studentportel.com">Contact Support</a> |
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a>
+        </p>
+    </footer>
+   
+</body>
+</html>
