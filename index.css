@@ -2,14 +2,18 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
-    background: linear-gradient(135deg, #e0f2f7 0%, #c1d9f0 100%);
+    /* background: linear-gradient(135deg, #e0f2f7 0%, #c1d9f0 100%); */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    /* background-image: url(https://imgs.search.brave.com/WrB_ivnBs4e7xBQ_JRYfdoFlmz1Op9m93dJHUpeMgQ0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jaGFy/dXNhdC5vbmxpbmUv/aW1hZ2VzLzQtaG9t/ZS9iYW5uZXItYmcu/d2VicA);
+    /* background-image: url('https://images.unsplash.com/photo-1606925797300-0e4a06e0e2d6?auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
-    background-position: center;        /* Make the image cover the whole screen */
-    /* background-repeat: no-repeat;  */ 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; */
+    background-image: url('https://www.transparenttextures.com/patterns/graphy.png');
+    background-color: #f5f7fa;
+    background-repeat: repeat;
 }
 
 
