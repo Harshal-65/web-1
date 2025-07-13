@@ -23,7 +23,7 @@ img {
     align-items: center;
     padding: 15px 30px;
     background: rgba(80, 45, 45, 0.1);
-    border-radius: 50px 50px 50px 50px;
+    border-radius: 0 0 50px 50px;
     backdrop-filter: blur(40px);
     box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.15);
     color: rgb(255, 255, 255);
