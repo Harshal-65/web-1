@@ -6,11 +6,12 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    /* background-image: url(https://imgs.search.brave.com/WrB_ivnBs4e7xBQ_JRYfdoFlmz1Op9m93dJHUpeMgQ0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jaGFy/dXNhdC5vbmxpbmUv/aW1hZ2VzLzQtaG9t/ZS9iYW5uZXItYmcu/d2VicA);
+    background-size: cover;
+    background-position: center;        /* Make the image cover the whole screen */
+    /* background-repeat: no-repeat;  */ 
 }
 
-img {
-    mix-blend-mode: multiply;
-}
 
 .main-content {
     flex: 1;
@@ -67,7 +68,7 @@ img {
 }
 
 .buttonOut {
-    background-color: #5cb85c;
+    background-color: #58ce58;
     color: white;
     padding: 10px 22px;
     border: none;
@@ -79,8 +80,9 @@ img {
 }
 
 .buttonOut:hover {
-    background-color: #4cae4c;
+    background-color: #4cbb4c;
     transform: translateY(-2px);
+    transform: scale(1.02);
 }
 
 #welcome {

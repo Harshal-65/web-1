@@ -1,16 +1,31 @@
 .attendance-section {
             max-width: 800px;
             margin: 40px auto 20px auto;
-            background: #eaf4ff;
+            background: rgba(80, 45, 45, 0.1);
+            backdrop-filter: blur(10px);
             border-radius: 12px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            box-shadow: 5px 6px 16px 10px rgba(0,0,0,0.2);
             padding: 32px 24px;
             font-family: 'Arial', sans-serif;
-            background: radial-gradient(circle, #a1c4fd, #667eea);
+            animation: attendanceAni 1s ease-in-out;
         }
+
+        @keyframes attendanceAni {
+            from {
+                opacity: 0;
+                filter: blur(10px);
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+
         .attendance-section h2 {
             margin-bottom: 24px;
-            color: #23408e;
+            color: #24272e;
             font-size: 2.5rem;
             text-align: center;
         }
@@ -21,28 +36,41 @@
             flex-wrap: wrap;
         }
         .attendance-summary div {
-            background: #fff;
+            
             border-radius: 8px;
             padding: 18px 28px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-            margin: 10px;
+            backdrop-filter: blur(3px);
+            box-shadow: 0 10px 20px 2px rgba(0, 0, 0, 0.2);
+            margin: 12px;
+            border-right: 3px solid #bcbdbd;
+            border-bottom: 3px solid #bcbdbd;
+            filter: brightness(1.02);
             min-width: 140px;
             text-align: center;
+        }
+
+        .attendance-summary div:hover {
+            transform: translateY(-3px);
+            box-shadow: 3px 5px 8px 4px rgba(0,0,0,0.2);
+            filter: brightness(1.03);
         }
 
         .attendance-summary div div{
             font-size: 1.5rem;
             font-weight: bold;
-            color: #23408e;
-            background: radial-gradient(circle, #a1c4fd, #667eea);
-            border:3px solid #4a90e2;
+            color: #24272e;
+            border-right: 3px solid #bbbcbc;
+            border-bottom: 3px solid #afb0b0;
+            backdrop-filter: blur(2px);
+            border-radius: 30px;
             
         }
         .attendance-table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 24px;
-            background: #fff;
+        
+            backdrop-filter: blur(5px);
             border-radius: 8px;
             overflow: hidden;
         }
@@ -68,22 +96,4 @@
             border: 1px solid #a1c4fd;
             font-size: 1rem;
         }
-        .button {
-            background: radial-gradient(circle, #a1c4fd, #667eea);
-            border: none;
-            color: #23408e;
-            padding: 12px 28px;
-            text-align: center;
-            text-decoration: none;
-            font-size: 1rem;
-            margin-top: 10px;
-            cursor: pointer;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: background 0.2s, box-shadow 0.2s;
-        }
-        .button:hover {
-            background: radial-gradient(circle, #667eea, #a1c4fd);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-            text-decoration: underline;
-        }
+       

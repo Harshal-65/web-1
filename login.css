@@ -61,12 +61,27 @@
 .login-form input[type="text"],
 .login-form input[type="password"] {
     width: 90%;
+    height: 30px;
     padding: 10px;
     margin: 10px 0 18px 0;
-    border: 1.5px solid #a1c4fd;
-    border-radius: 6px;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
     font-size: 1rem;
+    background: none;
+    color: #707984 ;
+    font-size: large;
+    font-style: bold;
+    border: 2px solid #d2dbf1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+    outline: none;
+    border: 2px solid #d2dbf1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 
 .login-form label {
     display: block;
