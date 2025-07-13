@@ -102,7 +102,7 @@ body {
     font-weight: 600;
     letter-spacing: 0.5px;
     border-left: 8px solid #4a90e2;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(3px);
     animation: welcomeAni 1s ease-out;
 }
 
@@ -168,8 +168,7 @@ hr {
     background: rgba(80, 45, 45, 0.1);
     border-radius: 12px;
     padding: 30px;
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(3px);
     text-align: center;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -206,6 +205,7 @@ hr {
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.05);
 }
 
 .card img {
