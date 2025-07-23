@@ -1,10 +1,13 @@
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            text-align: center;
-            padding: 50px;
+body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #232526 0%, #414345 100%);
+            color: #fff;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
         h1 {
             font-size: 50px;
@@ -14,7 +17,205 @@
             font-size: 20px;
         }
         a {
-            color: #0066cc;
+            color: #000407;
             text-decoration: none;
             font-weight: bold;
+        }
+
+        .error-container {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 24px 16px 0 16px;
+            box-sizing: border-box;
+        }
+
+        .animated-404 {
+            font-size: 7rem;
+            margin: 30px 0 10px 0;
+            letter-spacing: 10px;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 0 8px 32px #302f2f55, 0 2px 8px #000a;
+            animation: bounce404 1.5s infinite alternate cubic-bezier(.6,2,.4,1);
+            line-height: 1;
+            word-break: break-all;
+        }
+
+        @keyframes bounce404 {
+            0% { transform: translateY(0);}
+            100% { transform: translateY(-18px);}
+        }
+
+        .animated-text {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #010101;
+            animation: fadeInText 2s;
+            word-break: break-word;
+        }
+
+        @keyframes fadeInText {
+            from { opacity: 0; transform: translateY(30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 12px 32px;
+            background: linear-gradient(90deg, #00e6ff 0%, #4a90e2 100%);
+            color: #232526;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 2px 12px #00e6ff33;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+            animation: fadeInText 2.5s;
+            white-space: nowrap;
+        }
+
+        .back-home:hover {
+            background: linear-gradient(90deg, #4a90e2 0%, #00e6ff 100%);
+            color: #fff;
+            transform: translateY(-2px) scale(1.04);
+        }
+
+        .ufo-animation {
+            width: 220px;
+            height: 180px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            animation: floatUfo 3s infinite ease-in-out;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        @keyframes floatUfo {
+            0% { transform: translateY(0);}
+            50% { transform: translateY(-18px);}
+            100% { transform: translateY(0);}
+        }
+
+        .ufo {
+            position: absolute;
+            left: 50%;
+            top: 40px;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 80px;
+            z-index: 2;
+        }
+
+        .ufo-glass {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 38px;
+            background: radial-gradient(ellipse at 60% 40%, #e0f7fa 80%, #b2ebf2 100%);
+            border-radius: 50% 50% 45% 45% / 60% 60% 100% 100%;
+            box-shadow: 0 2px 12px #00e6ff44;
+            border: 2px solid #b2ebf2;
+            z-index: 3;
+        }
+
+        .ufo-body {
+            position: absolute;
+            left: 50%;
+            top: 28px;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 38px;
+            background: linear-gradient(90deg, #00e6ff 0%, #4a90e2 100%);
+            border-radius: 50% 50% 60% 60% / 60% 60% 100% 100%;
+            box-shadow: 0 8px 32px #00e6ff33;
+            z-index: 2;
+        }
+
+        .ufo-light {
+            position: absolute;
+            left: 50%;
+            top: 54px;
+            transform: translateX(-50%);
+            width: 110px;
+            height: 18px;
+            background: repeating-linear-gradient(90deg, #fff 0 10px, #00e6ff 10px 20px);
+            border-radius: 0 0 30px 30px / 0 0 100% 100%;
+            opacity: 0.7;
+            z-index: 2;
+        }
+
+        .ufo-beam {
+            position: absolute;
+            left: 50%;
+            top: 65px;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 120px;
+            background: linear-gradient(180deg, #00e6ff44 0%, #00e6ff00 100%);
+            border-radius: 50% 50% 80% 80% / 0 0 100% 100%;
+            filter: blur(1px);
+            opacity: 0.7;
+            z-index: 1;
+            animation: beamGlow 2s infinite alternate;
+        }
+
+        @keyframes beamGlow {
+            0% { opacity: 0.5;}
+            100% { opacity: 0.85;}
+        }
+
+        /* Responsive styles */
+        @media (max-width: 900px) {
+            .error-container {
+                max-width: 98vw;
+                padding: 18px 4vw 0 4vw;
+            }
+            .ufo-animation {
+                width: 160px;
+                height: 120px;
+            }
+            .ufo {
+                width: 120px;
+                height: 54px;
+                top: 20px;
+            }
+            .ufo-glass { width: 45px; height: 22px;}
+            .ufo-body { width: 90px; height: 22px;}
+            .ufo-light { width: 70px; height: 10px;}
+            .ufo-beam { width: 38px; height: 70px;}
+            .animated-404 { font-size: 4rem; }
+            .animated-text { font-size: 1.1rem;}
+            .back-home { font-size: 1rem; padding: 10px 22px;}
+        }
+
+        @media (max-width: 600px) {
+            .error-container {
+                max-width: 100vw;
+                padding: 10px 2vw 0 2vw;
+            }
+            .ufo-animation {
+                width: 90px;
+                height: 60px;
+            }
+            .ufo {
+                width: 60px;
+                height: 27px;
+                top: 10px;
+            }
+            .ufo-glass { width: 22px; height: 10px;}
+            .ufo-body { width: 36px; height: 10px;}
+            .ufo-light { width: 28px; height: 5px;}
+            .ufo-beam { width: 15px; height: 32px;}
+            .animated-404 { font-size: 2.2rem; letter-spacing: 3px;}
+            .animated-text { font-size: 0.95rem;}
+            .back-home { font-size: 0.92rem; padding: 8px 18px;}
         }
