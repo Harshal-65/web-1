@@ -1,12 +1,13 @@
 .dashboard-section {
     max-width: 1100px;
     margin: 40px auto 20px auto;
-    background: #eaf4ff;
+    /* background: #eaf4ff; */
     border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    /* box-shadow: 0 4px 16px rgba(0,0,0,0.08); */
     padding: 32px 24px;
     font-family: 'Arial', sans-serif;
-    background: radial-gradient(circle, #a1c4fd, #667eea);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .dashboard-section h2 {
@@ -31,11 +32,14 @@
 }
 
 .dashboard-card {
-    background: #fff;
+    /* background: #fff; */
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    box-shadow: 5px 8px 15px rgba(0,0,0,0.2);
     padding: 20px 18px;
     min-height: 180px;
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #c7c6c6;
+
 }
 
 .dashboard-card h3 {

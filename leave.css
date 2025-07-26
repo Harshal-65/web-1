@@ -1,0 +1,140 @@
+/* Add this to your leave.css file */
+
+.leave-container {
+    max-width: 400px;
+    margin: 60px auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    padding: 32px 24px;
+    text-align: center;
+    backdrop-filter: blur(3px);
+    /* background: rgba(255,255,255,0.85); */
+    animation: loginAni 1s ease-in-out;
+}
+
+@keyframes loginAni { 
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.leave-container h2 {
+    color: #23408e;
+    margin-bottom: 24px;
+}
+
+.leave-container label {
+    display: block;
+    text-align: left;
+    margin-left: 5%;
+    color: #23408e;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.leave-container input[type="text"],
+.leave-container input[type="date"],
+.leave-container select {
+    width: 90%;
+    height: 30px;
+    padding: 10px;
+    margin: 10px 0 18px 0;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    font-size: 1rem;
+    background: none;
+    color: #707984 ;
+    border: 2px solid #d2dbf1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+#leave-type{
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+}
+
+option {
+    color: #707984;
+    background: #fff;
+    border-radius: 20px;
+}
+
+.leave-container input[type="text"]:focus,
+.leave-container input[type="date"]:focus,
+.leave-container select:focus {
+    outline: none;
+    border: 2px solid #23408e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.leave-error {
+    color: #d32f2f;
+    margin-bottom: 10px;
+    font-size: 0.98rem;
+}
+
+.leave-container .button {
+    width: 300px;
+    margin-top: 10px;
+    border: none;
+    background: none;
+    color: #23408e;
+    padding: 20px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    backdrop-filter: blur();
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    border-radius: 5px;
+    font-weight: bold;
+    border: 3px solid #d7dff3;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+.leave-container .button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #d2dbf1;
+    transform: scale(1.05) translateY(-6px);
+    border-radius: 10px;
+    backdrop-filter: blur(30px);
+    width: 320px;
+}
+
+@media screen and (max-width: 600px) {
+    .leave-container {
+        width: 90%;
+        padding: 20px;
+    }
+    .leave-container input[type="text"],
+    .leave-container input[type="date"],
+    .leave-container select {
+        width: 90%;
+    }
+    .leave-container .button {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .leave-container {
+        width: 95%;
+        padding: 12px;
+    }
+    .leave-container input[type="text"],
+    .leave-container input[type="date"],
+    .leave-container select {
+        width: 95%;
+    }
+    .leave-container .button {
+        width: 95%;
+    }
+}

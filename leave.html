@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portel</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="leave.css">
+</head>
+<body>
+    <div class="header_row">
+        <img src="https://imgs.search.brave.com/7fk_lVvzbbp6L7HmNLS-vzXigKtw5j5cAhi52ow1BiU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jb2xs/ZWdlczE4LnMzLmFw/LXNvdXRoLTEuYW1h/em9uYXdzLmNvbS9D/aGFyb3Rhcl9Vbml2/ZXJzaXR5X29mX1Nj/aWVuY2VfYW5kX1Rl/Y2hub2xvZ3lfQ0hB/UlVTQVRfQW5hbmRf/bG9nb19qcGdfZWI0/NWFjNmNjNS53ZWJw" class="logo" alt="Logo">
+        <p class="title">Student Portal</p>
+        <button class="buttonOut" style="margin-left:auto; margin-right:10px; padding:8px 18px; font-size:1rem;" onclick="logout()">Go To Home</button>
+    </div>
+
+    <div class="leave-container">
+        <h2>Leave Application</h2>
+        <form id="leaveForm" onsubmit="return submitLeave(event)">
+            <div class="leave-error" id="leaveError"></div>
+            <label for="student-id">Student ID</label>
+            <input type="text" id="student-id" placeholder="Enter your Student ID" required>
+            <label for="leave-type">Leave Type</label>
+            <select id="leave-type" required>
+                <option value="" disabled selected>Select Leave Type</option>
+                <option value="sick">Sick Leave</option>
+                <option value="casual">Casual Leave</option>
+                <option value="emergency">Emergency Leave</option>
+            </select>
+            <label for="start-date">Start Date</label>
+            <input type="date" id="start-date" required>
+            <label for="end-date">End Date</label>
+            <input type="date" id="end-date" required>
+            <button type="submit" class="button">Submit Leave Application</button>
+        </form>
+    </div>    
+
+    <footer>
+        <div class="footer_container">
+            <p class="footer_text">
+                © 2025 <span>Student Portal</span>. All rights reserved.
+            </p>
+            <div class="footer_links">
+                <a href="contact.html"> 📞 Contact Support</a>
+                <span class="footer_sep">|</span>
+                <a href="#">🔒 Privacy Policy</a>
+                <span class="footer_sep">|</span>
+                <a href="#">📄 Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function logout() {
+            window.location.href = "index.html";
+        }
+
+        function submitLeave(event) {
+            event.preventDefault();
+            const studentId = document.getElementById('student-id').value;
+            const leaveType = document.getElementById('leave-type').value;
+            const startDate = document.getElementById('start-date').value;
+            const endDate = document.getElementById('end-date').value;
+
+            // Here you would typically send the data to the server
+            console.log(`Leave Application Submitted:
+                Student ID: ${studentId},
+                Leave Type: ${leaveType},
+                Start Date: ${startDate},
+                End Date: ${endDate}`);
+
+            alert("Leave application submitted successfully!");
+            return false; // Prevent form submission
+        }
+    </script>
+</body>
+</html>    
